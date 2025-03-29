@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export default function SelectBox() {
@@ -15,6 +16,9 @@ export default function SelectBox() {
 
   return (
     <div className='centerContainer'>
+      <Link href='https://scarce-suggestion-575.notion.site/Process-How-do-I-do-this-1c552ab52d2e80b2b752fa9d888f0eee' className='processLink'>
+        See How I did this
+      </Link>
       <div className='selectionBox'>
         <ul className='selectionBoxContent'>
           <li>

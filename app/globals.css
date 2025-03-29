@@ -41,6 +41,17 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: relative;
+}
+.processLink {
+  position: absolute;
+  bottom: 8%;
+  color: grey;
+  font-size: 14p;
+  text-decoration: none;
+}
+.processLink:hover {
+  text-decoration: underline;
 }
 
 .selectionBox {
