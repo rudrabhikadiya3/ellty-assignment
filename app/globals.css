@@ -16,10 +16,10 @@ ul {
 
 hr {
   border: none;
-  height: 1px;
   background: #cdcdcd;
   border-radius: 10px;
-  height: 0.7px;
+  height: 0.6px;
+  margin: 10px 0;
 }
 
 body {
@@ -44,27 +44,38 @@ body {
 }
 
 .selectionBox {
-  width: 370px;
-  box-shadow: 0px 8px 15px 0px #1414141f;
-  box-shadow: 0px 0px 4px 0px #1414141a;
+  width: 350px;
+  box-shadow: 0px 8px 15px 0px #1414141f, 0px 0px 4px 0px #1414141a;
   border: 1px solid #eeeeee;
   padding: 12px;
   border-radius: 6px;
 }
 
 ul > li {
-  justify-content: space-between;
   padding: 10px 5px;
   align-items: center;
   display: flex;
 }
+ul > li > label {
+  user-select: none;
+  cursor: pointer;
+  width: 100%;
+}
 
 button {
-  margin-top: 12px;
+  margin: 10px 0;
   width: 100%;
   border-radius: 4px;
   outline: none;
   border: none;
   padding: 10px 20px;
+  background-color: #ffce22;
+  cursor: pointer;
+  color: var(--foreground);
+}
+button:hover {
+  background-color: #ffd84d;
+}
+button:active {
   background-color: #ffce22;
 }

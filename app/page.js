@@ -18,7 +18,7 @@ export default function SelectBox() {
       <div className='selectionBox'>
         <ul className='selectionBoxContent'>
           <li>
-            <label htmlFor='all'>All</label>
+            <label htmlFor='all'>All Pages</label>
             <input type='checkbox' id='all' checked={selectedPages.length === pages.length} onChange={checkAll} />
           </li>
           <hr />
