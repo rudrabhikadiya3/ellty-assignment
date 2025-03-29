@@ -1,5 +1,6 @@
 import { Montserrat } from 'next/font/google'
 import './globals.css'
+import './checkbox.css'
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',

@@ -1,43 +1,35 @@
-export default function Home() {
+'use client'
+import { useState } from 'react'
+
+export default function SelectBox() {
+  const [selectedPages, setSelectedPages] = useState([])
+  const pages = ['1', '2', '3', '4']
+
+  const checkAll = (e) => {
+    setSelectedPages(e.target.checked ? pages : [])
+  }
+
+  const checkSingle = (page) => {
+    setSelectedPages((pre) => (pre.includes(page) ? pre.filter((p) => p !== page) : [...pre, page]))
+  }
+
   return (
     <div className='centerContainer'>
       <div className='selectionBox'>
         <ul className='selectionBoxContent'>
           <li>
-            <span>All Pages</span>
-            <span>
-              <input type='checkbox' name='' id='' />
-            </span>
+            <label htmlFor='all'>All</label>
+            <input type='checkbox' id='all' checked={selectedPages.length === pages.length} onChange={checkAll} />
           </li>
           <hr />
-
-          <li>
-            <span>Page 1</span>
-            <span>
-              <input type='checkbox' name='' id='' />
-            </span>
-          </li>
-          <li>
-            <span>Page 1</span>
-            <span>
-              <input type='checkbox' name='' id='' />
-            </span>
-          </li>
-          <li>
-            <span>Page 1</span>
-            <span>
-              <input type='checkbox' name='' id='' />
-            </span>
-          </li>
-          <li>
-            <span>Page 1</span>
-            <span>
-              <input type='checkbox' name='' id='' />
-            </span>
-          </li>
+          {pages.map((page) => (
+            <li key={page}>
+              <label htmlFor={page}>Page {page}</label>
+              <input type='checkbox' id={page} checked={selectedPages.includes(page)} onChange={() => checkSingle(page)} />
+            </li>
+          ))}
         </ul>
         <hr />
-
         <button>Done</button>
       </div>
     </div>

@@ -1,0 +1,54 @@
+.custom-checkbox input {
+  display: none;
+}
+
+input[type='checkbox'] {
+  appearance: none;
+  width: 23px;
+  height: 23px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type='checkbox']::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background: url('/svg/mark-dark.svg') no-repeat center/contain;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+input[type='checkbox']:hover {
+  border-color: #bdbdbd;
+}
+
+input[type='checkbox']:hover::before {
+  opacity: 0.25;
+}
+
+input[type='checkbox']:checked {
+  background-color: #2469f6;
+  border-color: #2469f6;
+}
+
+input[type='checkbox']:checked::before {
+  background-image: url('/svg/mark-light.svg');
+  opacity: 1;
+}
+
+input[type='checkbox']:active {
+  box-shadow: 0 0 0 3px rgba(233, 240, 254, 1);
+}
+
+input[type='checkbox']:active::before {
+  opacity: 0.8;
+}
